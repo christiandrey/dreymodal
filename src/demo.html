@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <title>DreyModal Demo Page</title>
+  <link rel="stylesheet" href="css/dreymodal.css">
+  <link rel="stylesheet" href="css/dreyanim.css">
+</head>
+<style media="screen">
+  body {
+    font-family: "Segoe UI"
+  }
+</style>
+<body>
+
+  <div style="width:300px; height:300px; margin:auto; background-color:#fff000; margin-top: 30px;" class="testObject">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id qui incidunt accusamus dicta iusto, suscipit quaerat impedit facere eligendi aperiam! Maiores, officiis. Beatae, minima, sunt pariatur animi soluta sit.
+  <button onclick="javascript:q.open();">Hello world</button></div>
+
+  <div style="width:300px; height:300px; margin:auto; background-color:#fff000; margin-top: 30px;" class="testObjectSec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id qui incidunt accusamus dicta iusto, suscipit quaerat impedit facere eligendi aperiam! Maiores, officiis. Beatae, minima, sunt pariatur animi soluta sit and some mores shit.
+  <button onclick="javascript:s.open();">Hello world</button></div>
+
+  <button style="margin:30px auto; width:150px; height:30px" class="openButton">Open Modal</button>
+</body>
+<script src="js/jquery-3.1.0.slim.min.js"></script>
+<script src="js/dreyanim.js"></script>
+<script src="js/dreymodal.js"></script>
+<!-- <script>
+  $('.testObject4').dreydo();
+</script> -->
+<script>
+  var elem = document.getElementsByClassName('testObject');
+  var s = new Dreymodal(elem,{});
+  s.open();
+
+  // $('.testObject').dreymodal();
+
+  var q = new Dreymodal(document.getElementsByClassName('testObjectSec'),{
+    minWidth : 300,
+    maxWidth : 700,
+    overlay : true,
+    overlayColor : "#222222",
+    overlayOpacity : 0.9,
+    closeButton : true,
+    inAnimationTime : 600,
+    inAnimationType : "slideInFromLeft",
+    outAnimationTime : 600,
+    outAnimationType : "slideOutToRight",
+    allowEscapeKey : true,
+    title : "Title of this modal goes here",
+    titleBackColor : "#128a4b",
+    overlayBlur : true
+  });
+
+  $('.openButton').click(function(){
+    q.open();
+  })
+</script>
+</html>
